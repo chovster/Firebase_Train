@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<title>Firebase Train Schedule</title>
+	<meta charset="UTF-8">
+
+	<!--css file from the folder-->	
+	<link rel="stylesheet" type="text/css" href="asset/style.css"> 
+
+	<!--bootstrap cdn-->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!--firebase-->
+	<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+	<!--moment.js-->
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>  
+	<!--jquery-->
+	<script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<br>
+		<div class="jumbotron">
+			<h1 class="text-center">Firebase Train Schedule</h1>
+			<h2 class ="text-center">Destination to Destiny</h2>
+		</div>
+
+		<!--displaying current train schedule-->
+		<div class="row">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Current Train Schedule
+					</h3>
+				</div>
+
+				<div class="panel-body">
+					<!--table table-striped is a style of the table-->
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Train Name</th>
+								<th>Destination</th>
+								<th>Frequency (Min)</th>
+								<th>Next Arrival</th>
+								<th>Minutes Away</th>
+							</tr>
+						</thead>
+						<tbody class="table-body">
+							<tr>
+								<td>Firebase1</td>
+								<td>San Francisco</td>
+								<td>60</td>
+								<td>5:30pm</td>
+								<td>20</td>
+							</tr>
+							<tr>
+								<td>Train 202</td>
+								<td>Long Beach</td>
+								<td>20</td>
+								<td>2:30pm</td>
+								<td>45</td>
+							</tr>
+							<tr>
+								<td>Irvine</td>
+								<td>UCI</td>
+								<td>15</td>
+								<td>6:00pm</td>
+								<td>25</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	
+			</div>
+		</div>	
+		<div class="row">
+			<div class="panel panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Add Train
+					</h3>
+				</div>
+				<div class="panel-body">
+					<form role="form">
+						<div class="form-group">
+						  <label for="train-input">Train Name</label>
+						  <input class="form-control" id="train-input" type="text">
+						</div>
+						<div class="form-group">
+						  <label for="destination-input">Destination</label>
+						  <input class="form-control"  id="destination-input" type="text">
+						</div>
+						<div class="form-group">
+						  <label for="firstTrain-input">First Train Time (HH:MM - Military Time)</label>
+						  <!-- <input class="form-control" id="firstTrain-input" type="time"> -->
+						  <input class="form-control" type="text" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" id="firstTrain-input">
+						</div>  
+						<div class="form-group">
+						  <label for="frequency-input">Frequency (Min)</label>
+						  <input class="form-control" id="frequency-input" type="number">
+						</div>  
+						<button class="btn btn-default" id="add-train" type="submit">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<!-- Added Moment JS -->
+
+		<script type="text/javascript" src="asset/logic.js"></script>
+
+	</body>
+	</html>
